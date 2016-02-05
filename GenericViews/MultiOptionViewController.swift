@@ -7,13 +7,7 @@
 //
 
 import UIKit
-
-enum MultiOptionButtonsType: Int {
-  case RemindType
-  case PushNotificationRequestType
-  case ShareSuccess
-  case UserType
-}
+import OAStackView
 
 extension UIView {
   enum UIViewFrameType {
@@ -32,8 +26,16 @@ class MultiOptionViewController: UIViewController {
   @IBOutlet weak var subtitleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
-  var dataContainer: MultiOptionViewControllerContainer = MultiOptionViewControllerContainer.templateContainer() {
+  @IBOutlet weak var twoCircleButtonTypeStackView: OAStackView!
+  
+  var isDataContaierAlreadySet: Bool = false
+  var dataContainer: MultiOptionViewControllerContainer! = MultiOptionViewControllerContainer.templateContainer() {
     didSet {
+      assert(!isViewLoaded(), "Must be set before view is loaded")
+      assert(!isDataContaierAlreadySet, "Must be set just once")
+      
+      isDataContaierAlreadySet = true
+      
       updateView()
     }
   }
@@ -42,6 +44,8 @@ class MultiOptionViewController: UIViewController {
   
   @IBOutlet weak var viewHorizontalTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var imageHorizontalTopConstraint: NSLayoutConstraint!
+  
+  @IBOutlet weak var twoCircleButtonTypeStackViewBottomConstraint: NSLayoutConstraint!
   
   // MARK: - Vertical
   
@@ -52,9 +56,8 @@ class MultiOptionViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    // FIXME: - Remove after tests
     updateView()
-    
-    // Do any additional setup after loading the view.
   }
     
   override func updateViewConstraints() {
@@ -63,7 +66,7 @@ class MultiOptionViewController: UIViewController {
     let screenWidth = UIScreen.mainScreen().bounds.width
     let screenHeight = UIScreen.mainScreen().bounds.height
     
-     let width = min(screenWidth, screenHeight)
+    let width = min(screenWidth, screenHeight)
     let height = max(screenWidth, screenHeight)
     
     imageVerticalTopConstraint.constant = height * 0.04
@@ -72,6 +75,9 @@ class MultiOptionViewController: UIViewController {
     
     let horizontalTopValue: CGFloat = round(pow(width, 4.35) * 0.06 / pow(320, 3.35))
     imageHorizontalTopConstraint.constant = horizontalTopValue
+    
+    let twoCircleButtonTypeStackViewValue = round(pow(width, 4.32) * 0.09 / pow(320, 3.32))
+    twoCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
   }
   
   override func viewDidLayoutSubviews() {
@@ -79,6 +85,8 @@ class MultiOptionViewController: UIViewController {
     
     titleLabel.textAlignment = (view.viewFrameType == .Horizontal) ? .Left : .Center
     subtitleLabel.textAlignment = (view.viewFrameType == .Horizontal) ? .Left : .Center
+    
+    twoCircleButtonTypeStackView.axis = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
   }
   
   func updateView() {
@@ -89,6 +97,27 @@ class MultiOptionViewController: UIViewController {
     titleLabel.text = dataContainer.title
     subtitleLabel.text = dataContainer.subtitle
     imageView.image = UIImage(named: dataContainer.imageName)
+    
+    let type = dataContainer.buttonsType 
+    if type == .TwoCirclesType {
+      twoCircleButtonTypeStackView.hidden = false
+      addTwoSmallButtons()
+    } else if type == .MultiplyCirclesType {
+      twoCircleButtonTypeStackView.hidden = false
+    }
+  }
+  
+  func addTwoSmallButtons() {
+    let screenWidth = UIScreen.mainScreen().bounds.width
+    let screenHeight = UIScreen.mainScreen().bounds.height
+    let height = max(screenWidth, screenHeight)
+    
+    let buttons = [TwoCircleButtonTypeCellView.createCell(), TwoCircleButtonTypeCellView.createCell()]
+    
+    for button in buttons {
+      button.titleLabelWidthConstraintValue = height * 0.25
+      twoCircleButtonTypeStackView.addArrangedSubview(button)
+    }
   }
   
   override func prefersStatusBarHidden() -> Bool {

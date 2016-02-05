@@ -15,6 +15,9 @@
 		923034A11C6385E000716304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923034A01C6385E000716304 /* Assets.xcassets */; };
 		923034A41C63878600716304 /* MultiOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923034A31C63878600716304 /* MultiOptionViewController.swift */; };
 		923034A61C63879600716304 /* MultiOptionScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923034A51C63879600716304 /* MultiOptionScreens.storyboard */; };
+		92BCF6A31C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */; };
+		92BCF6A51C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */; };
+		92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */; };
 		92FD97721C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD97711C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift */; };
 		FC53ADD10C7AAA2005907D4B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6469CAFA799EFEBB70C4D298 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,10 @@
 		923034A31C63878600716304 /* MultiOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionViewController.swift; sourceTree = "<group>"; };
 		923034A51C63879600716304 /* MultiOptionScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiOptionScreens.storyboard; sourceTree = "<group>"; };
 		92BCF69D1C64D58600F7DD1E /* GenericViews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GenericViews-Bridging-Header.h"; sourceTree = "<group>"; };
+		92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCircleButtonTypeCellView.swift; sourceTree = "<group>"; };
+		92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoCircleButtonTypeCellView.xib; sourceTree = "<group>"; };
+		92BCF6A61C64DA6400F7DD1E /* UIView+UCViewFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UCViewFromNib.h"; sourceTree = "<group>"; };
+		92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UCViewFromNib.m"; sourceTree = "<group>"; };
 		92FD97711C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionViewControllerContainer.swift; sourceTree = "<group>"; };
 		D0EF7C51CA4AF6462B721076 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +94,8 @@
 				9230349E1C6385D300716304 /* MultiOptionsScreens.xcassets */,
 				923034951C6385BD00716304 /* LaunchScreen.storyboard */,
 				923034981C6385BD00716304 /* Info.plist */,
+				92BCF6A61C64DA6400F7DD1E /* UIView+UCViewFromNib.h */,
+				92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */,
 				92BCF69D1C64D58600F7DD1E /* GenericViews-Bridging-Header.h */,
 			);
 			path = GenericViews;
@@ -106,6 +115,8 @@
 		92BCF6A11C64D5E000F7DD1E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */,
+				92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -184,6 +195,7 @@
 				9230349F1C6385D300716304 /* MultiOptionsScreens.xcassets in Resources */,
 				923034A11C6385E000716304 /* Assets.xcassets in Resources */,
 				923034921C6385BD00716304 /* Main.storyboard in Resources */,
+				92BCF6A51C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +256,10 @@
 			files = (
 				923034A41C63878600716304 /* MultiOptionViewController.swift in Sources */,
 				92FD97721C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift in Sources */,
+				92BCF6A31C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift in Sources */,
 				9230348F1C6385BD00716304 /* ViewController.swift in Sources */,
 				9230348D1C6385BD00716304 /* AppDelegate.swift in Sources */,
+				92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
