@@ -20,6 +20,17 @@ extension UIView {
   }
 }
 
+extension CGSize {
+  enum FrameType {
+    case Horizontal
+    case Vertical
+  }
+  
+  var viewFrameType: FrameType {
+    return (height > width) ? .Vertical : .Horizontal
+  }
+}
+
 class MultiOptionViewController: UIViewController {
   
   @IBOutlet weak var titleLabel: UILabel!
@@ -87,6 +98,12 @@ class MultiOptionViewController: UIViewController {
     subtitleLabel.textAlignment = (view.viewFrameType == .Horizontal) ? .Left : .Center
     
     twoCircleButtonTypeStackView.axis = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
+//    twoCircleButtonTypeStackView.spacing = (view.viewFrameType == .Horizontal) ? 200 : 20
+//    for subview in twoCircleButtonTypeStackView.arrangedSubviews {
+//      if let subview = subview as? MultiplyCircleButtonTypeCellView {
+//        subview.type = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
+//      }
+//    }
   }
   
   func updateView() {
@@ -114,7 +131,7 @@ class MultiOptionViewController: UIViewController {
     
     let buttons = [TwoCircleButtonTypeCellView.createCell(), TwoCircleButtonTypeCellView.createCell()]
     
-    for button in buttons {
+    for button in buttons { 
       button.titleLabelWidthConstraintValue = height * 0.25
       twoCircleButtonTypeStackView.addArrangedSubview(button)
     }
