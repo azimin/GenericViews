@@ -40,4 +40,8 @@ class TwoCirclesButtonTypeCellView: UIView, MultiOptionItemSettableCell {
   static func createCell() -> TwoCirclesButtonTypeCellView {
     return TwoCirclesButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("TwoCirclesButtonTypeCellView")
   }
+  
+  @IBAction func buttonAction(sender: UIButton) {
+    item.completionBlock?()
+  }
 }

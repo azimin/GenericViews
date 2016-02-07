@@ -22,6 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vL0-Ie-0Ns" userLabel="Helper Space View">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="GBn-TM-OMK"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GBn-TM-OMK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="GBn-TM-OMK"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-KW-J1d">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -127,23 +144,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vL0-Ie-0Ns" userLabel="Helper Space View">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="GBn-TM-OMK"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GBn-TM-OMK"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="GBn-TM-OMK"/>
-                                    </mask>
-                                </variation>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xnk-1v-JVP">
+                                <rect key="frame" x="548" y="34" width="32" height="32"/>
+                                <state key="normal" image="close_button_get_ready_screen"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="pqM-PI-GXQ" eventType="touchUpInside" id="zZd-Oh-ouU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -173,10 +180,12 @@
                             <constraint firstItem="zfk-8e-iUi" firstAttribute="top" secondItem="IXA-xX-zz1" secondAttribute="bottom" id="V2g-eh-bF9"/>
                             <constraint firstItem="vL0-Ie-0Ns" firstAttribute="centerX" secondItem="mCc-VX-m6e" secondAttribute="centerX" id="W3W-fL-6tg"/>
                             <constraint firstItem="vL0-Ie-0Ns" firstAttribute="top" secondItem="NzO-Yt-iHq" secondAttribute="bottom" constant="8" id="XE1-06-BLL"/>
+                            <constraint firstItem="Xnk-1v-JVP" firstAttribute="top" secondItem="IXA-xX-zz1" secondAttribute="bottom" constant="14" id="Z2c-UA-Fku"/>
                             <constraint firstItem="Rol-HG-Wtp" firstAttribute="top" secondItem="fKl-8k-eI4" secondAttribute="bottom" constant="31" id="ZA8-ex-h8Q"/>
                             <constraint firstItem="NzO-Yt-iHq" firstAttribute="firstBaseline" secondItem="JU1-Ye-N6O" secondAttribute="bottom" constant="7.5" id="ZIY-kz-sXl">
                                 <variation key="heightClass=compact" constant="30"/>
                             </constraint>
+                            <constraint firstItem="Xnk-1v-JVP" firstAttribute="trailing" secondItem="mCc-VX-m6e" secondAttribute="trailingMargin" id="ZfM-9B-eL7"/>
                             <constraint firstItem="fKl-8k-eI4" firstAttribute="centerY" secondItem="vL0-Ie-0Ns" secondAttribute="centerY" id="aih-r5-xck"/>
                             <constraint firstItem="fKl-8k-eI4" firstAttribute="centerX" secondItem="mCc-VX-m6e" secondAttribute="centerX" id="cwi-Lo-TWl"/>
                             <constraint firstItem="JU1-Ye-N6O" firstAttribute="leading" secondItem="zfk-8e-iUi" secondAttribute="trailing" constant="3" id="eBH-ER-LNK">
@@ -201,11 +210,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="vL0-Ie-0Ns"/>
                                 <exclude reference="6o6-KW-J1d"/>
                                 <exclude reference="NzO-Yt-iHq"/>
                                 <exclude reference="JU1-Ye-N6O"/>
                                 <exclude reference="zfk-8e-iUi"/>
-                                <exclude reference="vL0-Ie-0Ns"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="DSM-Gl-XGt"/>
@@ -285,10 +294,10 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="vL0-Ie-0Ns"/>
                                 <include reference="NzO-Yt-iHq"/>
                                 <include reference="JU1-Ye-N6O"/>
                                 <include reference="zfk-8e-iUi"/>
-                                <include reference="vL0-Ie-0Ns"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="GXH-cl-NjN"/>
@@ -328,11 +337,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsa-9q-dfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="216"/>
+            <point key="canvasLocation" x="68" y="223"/>
         </scene>
     </scenes>
     <resources>
         <image name="background_tuner" width="320" height="480"/>
+        <image name="close_button_get_ready_screen" width="32" height="32"/>
         <image name="push_notification_image" width="140" height="69"/>
     </resources>
 </document>

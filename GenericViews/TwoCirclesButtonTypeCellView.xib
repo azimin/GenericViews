@@ -28,6 +28,12 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vab-f6-Qo2">
+                    <rect key="frame" x="0.0" y="0.0" width="174" height="50"/>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="uQR-9Q-QHB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -35,8 +41,12 @@
                 <constraint firstItem="N8e-EU-oEr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3qW-Q0-vV8"/>
                 <constraint firstItem="N8e-EU-oEr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AjJ-wm-PZ1"/>
                 <constraint firstItem="QtJ-up-sSd" firstAttribute="leading" secondItem="N8e-EU-oEr" secondAttribute="trailing" constant="14" id="DWM-D8-f2I"/>
+                <constraint firstAttribute="bottom" secondItem="vab-f6-Qo2" secondAttribute="bottom" id="GEy-sU-wlI"/>
                 <constraint firstAttribute="bottom" secondItem="N8e-EU-oEr" secondAttribute="bottom" id="WwJ-Tb-hth"/>
+                <constraint firstItem="vab-f6-Qo2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pQL-m9-9nM"/>
+                <constraint firstItem="vab-f6-Qo2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uBh-8H-HXn"/>
                 <constraint firstItem="QtJ-up-sSd" firstAttribute="centerY" secondItem="N8e-EU-oEr" secondAttribute="centerY" id="x9e-GM-Con"/>
+                <constraint firstAttribute="trailing" secondItem="vab-f6-Qo2" secondAttribute="trailing" id="yIg-xA-c4W"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

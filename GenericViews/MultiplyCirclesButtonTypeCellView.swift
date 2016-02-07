@@ -49,4 +49,8 @@ class MultiplyCirclesButtonTypeCellView: UIView, MultiOptionItemSettableCell {
   static func createCell() -> MultiplyCirclesButtonTypeCellView {
     return MultiplyCirclesButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("MultiplyCirclesButtonTypeCellView")
   }
+  
+  @IBAction func buttonAction(sender: UIButton) {
+    item.completionBlock?()
+  }
 }

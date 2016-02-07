@@ -46,16 +46,26 @@
                         </mask>
                     </variation>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eT-gR-McJ">
+                    <rect key="frame" x="0.0" y="0.0" width="212" height="38"/>
+                    <connections>
+                        <action selector="buttonAction:" destination="WfK-s1-hit" eventType="touchUpInside" id="4tI-tb-9aY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="2eT-gR-McJ" secondAttribute="bottom" id="2bs-Qv-6Qg"/>
                 <constraint firstItem="bm5-xJ-MBk" firstAttribute="leading" secondItem="WfK-s1-hit" secondAttribute="leading" id="EQZ-wu-Czi"/>
                 <constraint firstAttribute="trailing" secondItem="rgr-ed-g2J" secondAttribute="trailing" id="MG9-xV-OmO"/>
                 <constraint firstItem="bm5-xJ-MBk" firstAttribute="width" secondItem="bm5-xJ-MBk" secondAttribute="height" multiplier="1:1" id="YdX-aX-Z0O"/>
                 <constraint firstAttribute="bottom" secondItem="bm5-xJ-MBk" secondAttribute="bottom" id="lEv-pc-LaB"/>
                 <constraint firstItem="rgr-ed-g2J" firstAttribute="leading" secondItem="bm5-xJ-MBk" secondAttribute="trailing" constant="14" id="qPa-4q-9ik"/>
+                <constraint firstItem="2eT-gR-McJ" firstAttribute="top" secondItem="WfK-s1-hit" secondAttribute="top" id="tGf-51-L5k"/>
                 <constraint firstItem="rgr-ed-g2J" firstAttribute="centerY" secondItem="bm5-xJ-MBk" secondAttribute="centerY" id="tdi-Xg-zvC"/>
                 <constraint firstItem="bm5-xJ-MBk" firstAttribute="top" secondItem="WfK-s1-hit" secondAttribute="top" id="thM-42-yUX"/>
+                <constraint firstItem="2eT-gR-McJ" firstAttribute="leading" secondItem="WfK-s1-hit" secondAttribute="leading" id="w2G-IA-C2Q"/>
+                <constraint firstAttribute="trailing" secondItem="2eT-gR-McJ" secondAttribute="trailing" id="x9A-yF-WWr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

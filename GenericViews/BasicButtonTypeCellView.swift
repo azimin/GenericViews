@@ -93,5 +93,9 @@ class BasicButtonTypeCellView: UIView, MultiOptionItemSettableCell {
   static func createCell() -> BasicButtonTypeCellView {
     return BasicButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("BasicButtonTypeCellView")
   }
+  
+  @IBAction func buttonAction(sender: UIButton) {
+    item.completionBlock?()
+  }
 
 }

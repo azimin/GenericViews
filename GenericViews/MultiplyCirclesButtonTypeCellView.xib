@@ -38,9 +38,16 @@
                         </mask>
                     </variation>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCz-gO-p5g">
+                    <rect key="frame" x="-10" y="-10" width="232" height="58"/>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="TVu-ny-qtI"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="aCz-gO-p5g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-10" id="0Ug-Qg-1QA"/>
                 <constraint firstItem="WYB-ef-iQ3" firstAttribute="centerY" secondItem="EKv-JN-pvv" secondAttribute="centerY" id="5PJ-Xf-seW"/>
                 <constraint firstItem="EKv-JN-pvv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8ke-Kc-lQA"/>
                 <constraint firstItem="EKv-JN-pvv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9Pr-Yn-Mv5"/>
@@ -49,10 +56,14 @@
                 <constraint firstAttribute="trailing" secondItem="EKv-JN-pvv" secondAttribute="trailing" id="T6v-bv-ETD"/>
                 <constraint firstAttribute="trailing" secondItem="WYB-ef-iQ3" secondAttribute="trailing" id="Yk6-Ry-6ni"/>
                 <constraint firstItem="WYB-ef-iQ3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YlH-OB-mwP"/>
+                <constraint firstAttribute="bottom" secondItem="aCz-gO-p5g" secondAttribute="bottom" constant="-10" id="dq1-hH-csg"/>
                 <constraint firstItem="WYB-ef-iQ3" firstAttribute="firstBaseline" secondItem="EKv-JN-pvv" secondAttribute="bottom" constant="22" id="eo1-pH-Pob"/>
+                <constraint firstAttribute="trailing" secondItem="aCz-gO-p5g" secondAttribute="trailing" constant="-10" id="q3c-8P-tSs"/>
+                <constraint firstItem="aCz-gO-p5g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-10" id="qxI-d5-l4h"/>
                 <constraint firstItem="EKv-JN-pvv" firstAttribute="width" secondItem="EKv-JN-pvv" secondAttribute="height" multiplier="1:1" id="rY9-Z3-uFm"/>
                 <constraint firstAttribute="bottom" secondItem="EKv-JN-pvv" secondAttribute="bottom" id="vsZ-3k-f77"/>
                 <constraint firstItem="WYB-ef-iQ3" firstAttribute="leading" secondItem="EKv-JN-pvv" secondAttribute="trailing" constant="14" id="xCm-yW-pGy"/>
+                <constraint firstItem="WYB-ef-iQ3" firstAttribute="top" secondItem="aCz-gO-p5g" secondAttribute="bottom" id="xcI-li-Mte"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
@@ -66,6 +77,7 @@
                     <exclude reference="YlH-OB-mwP"/>
                     <exclude reference="eo1-pH-Pob"/>
                     <exclude reference="xCm-yW-pGy"/>
+                    <exclude reference="xcI-li-Mte"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact">

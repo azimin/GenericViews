@@ -9,6 +9,8 @@
 import UIKit
 import OAStackView
 
+// IMPORTANT: Some of MultioOption Items uses Size Clases as well as MultiOptionViewController
+
 extension UIView {
   enum UIViewFrameType {
     case Horizontal
@@ -17,17 +19,6 @@ extension UIView {
   
   var viewFrameType: UIViewFrameType {
     return (frame.height > frame.width) ? .Vertical : .Horizontal
-  }
-}
-
-extension CGSize {
-  enum FrameType {
-    case Horizontal
-    case Vertical
-  }
-  
-  var viewFrameType: FrameType {
-    return (height > width) ? .Vertical : .Horizontal
   }
 }
 
@@ -44,15 +35,18 @@ class MultiOptionViewController: UIViewController {
   @IBOutlet weak var verticalAligmentCircleButtonTypeStackViewBottomConstraint: NSLayoutConstraint!
   
   var isDataContaierAlreadySet: Bool = false
-  var dataContainer: MultiOptionViewControllerContainer! = MultiOptionViewControllerContainer.templateContainerForType(MultiOptionButtonsType.ButtonsType) {
+  private(set) var dataContainer: MultiOptionViewControllerContainer! {
     didSet {
       assert(!isViewLoaded(), "Must be set before view is loaded")
       assert(!isDataContaierAlreadySet, "Must be set just once")
-      
       isDataContaierAlreadySet = true
-      
-      updateView()
     }
+  }
+  
+  static func multiOptionViewCotnrollerWithDataContainer(dataContainer: MultiOptionViewControllerContainer) -> MultiOptionViewController {
+    let viewController = UIStoryboard(name: "MultiOptionScreens", bundle: nil).instantiateInitialViewController() as! MultiOptionViewController
+    viewController.dataContainer = dataContainer
+    return viewController
   }
   
   // MARK: - Horizontal
@@ -76,10 +70,7 @@ class MultiOptionViewController: UIViewController {
     subtitleLabel.font = UIFont.uc_helveticaNeueLightWithSize(16)
     subtitleLabel.textColor = UIColor.uc_hexEEEEEEColor().colorWithAlphaComponent(0.7)
     
-    // FIXME: - Remove after tests
     updateView()
-    
-    differentAligmentCircleButtonTypeStackView.distribution = OAStackViewDistribution.FillProportionally
   }
     
   override func updateViewConstraints() {
@@ -216,6 +207,10 @@ class MultiOptionViewController: UIViewController {
       
       verticalAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
+  }
+  
+  @IBAction func closeButtonAction(sender: UIButton) {
+    self.dismissViewControllerAnimated(true, completion: nil)
   }
   
   override func prefersStatusBarHidden() -> Bool {
