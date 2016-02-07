@@ -37,6 +37,13 @@ class MultiplyCirclesVerticalButtonTypeCellView: UIView, MultiOptionItemSettable
     }
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    titleLabel.textColor = UIColor.uc_hexEEEEEEColor()
+    titleLabel.font = UIFont.uc_helveticaNeueLightWithSize(16)
+  }
+  
   static func createCell() -> MultiplyCirclesVerticalButtonTypeCellView {
     return MultiplyCirclesVerticalButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("MultiplyCirclesVerticalButtonTypeCellView")
   }

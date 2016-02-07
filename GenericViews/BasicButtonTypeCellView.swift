@@ -35,6 +35,7 @@ class BasicButtonTypeCellView: UIView, MultiOptionItemSettableCell {
     
     button.titleLabel?.numberOfLines = 0
     button.titleLabel?.textAlignment = .Center
+    button.titleLabel?.font = UIFont.uc_helveticaNeueMediumFontWithSize(14)
   }
   
   override func layoutSubviews() {
@@ -59,9 +60,11 @@ class BasicButtonTypeCellView: UIView, MultiOptionItemSettableCell {
       switch type {
       case .Attention:
         addGradient()
+        buttonHeightConstraint.constant = 55
       case .Basic:
         button.layer.borderWidth = 1.0
         button.setTitleColor(UIColor.uc_hexEEEEEEColor().colorWithAlphaComponent(0.7), forState: .Normal)
+        buttonHeightConstraint.constant = 32
       }
     }
   }

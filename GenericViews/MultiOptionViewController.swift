@@ -114,6 +114,7 @@ class MultiOptionViewController: UIViewController {
     case .ButtonsType:
       let value = round(pow(width, 4.28) * 0.07 / pow(320, 3.28))
       verticalAligmentCircleButtonTypeStackViewBottomConstraint.constant = value
+      verticalAligmentCircleButtonTypeStackView.spacing = width * 0.04
       break
     }
   }
