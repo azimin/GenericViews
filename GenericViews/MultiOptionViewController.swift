@@ -31,13 +31,13 @@ extension CGSize {
   }
 }
 
-class MultiOptionViewController: UIViewController {
-  
+class MultiOptionViewController: UIViewController {  
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var subtitleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
   @IBOutlet weak var twoCircleButtonTypeStackView: OAStackView!
+  @IBOutlet var twoCircleButtonTypeStackViewHightConstraint: NSLayoutConstraint!
   
   var isDataContaierAlreadySet: Bool = false
   var dataContainer: MultiOptionViewControllerContainer! = MultiOptionViewControllerContainer.templateContainer() {
@@ -69,13 +69,12 @@ class MultiOptionViewController: UIViewController {
     super.viewDidLoad()
     // FIXME: - Remove after tests
     updateView()
+    
+    twoCircleButtonTypeStackView.distribution = OAStackViewDistribution.FillProportionally
   }
     
   override func updateViewConstraints() {
     super.updateViewConstraints()
-    
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
     
     let width = min(screenWidth, screenHeight)
     let height = max(screenWidth, screenHeight)
@@ -87,23 +86,42 @@ class MultiOptionViewController: UIViewController {
     let horizontalTopValue: CGFloat = round(pow(width, 4.35) * 0.06 / pow(320, 3.35))
     imageHorizontalTopConstraint.constant = horizontalTopValue
     
-    let twoCircleButtonTypeStackViewValue = round(pow(width, 4.32) * 0.09 / pow(320, 3.32))
-    twoCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+    updateBottomViewConstraints()
+  }
+  
+  func updateBottomViewConstraints() {
+    let width = min(screenWidth, screenHeight)
+    
+    switch dataContainer.buttonsType {
+    case .TwoCirclesType:
+      let twoCircleButtonTypeStackViewValue = round(pow(width, 4.32) * 0.09 / pow(320, 3.32))
+      twoCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+    case .MultiplyCirclesType:
+      let twoCircleButtonTypeStackViewValue = round(pow(width, 3.6) * 0.09 / pow(320, 2.6))
+      twoCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+    default:
+      break
+    }
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     
+    //let width = min(screenWidth, screenHeight)
+    let height = max(screenWidth, screenHeight)
+    
     titleLabel.textAlignment = (view.viewFrameType == .Horizontal) ? .Left : .Center
     subtitleLabel.textAlignment = (view.viewFrameType == .Horizontal) ? .Left : .Center
     
-    twoCircleButtonTypeStackView.axis = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
-//    twoCircleButtonTypeStackView.spacing = (view.viewFrameType == .Horizontal) ? 200 : 20
-//    for subview in twoCircleButtonTypeStackView.arrangedSubviews {
-//      if let subview = subview as? MultiplyCircleButtonTypeCellView {
-//        subview.type = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
-//      }
-//    }
+    switch dataContainer.buttonsType {
+    case .MultiplyCirclesType:
+      twoCircleButtonTypeStackView.spacing = (view.viewFrameType == .Horizontal) ? height * 0.23 : height * 0.04
+      fallthrough
+    case .TwoCirclesType:
+      twoCircleButtonTypeStackView.axis = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
+    default:
+      break
+    }
   }
   
   func updateView() {
@@ -121,14 +139,13 @@ class MultiOptionViewController: UIViewController {
       addTwoSmallButtons()
     } else if type == .MultiplyCirclesType {
       twoCircleButtonTypeStackView.hidden = false
+      twoCircleButtonTypeStackViewHightConstraint.constant = 60
+      addSmallButtons()
     }
   }
   
   func addTwoSmallButtons() {
-    let screenWidth = UIScreen.mainScreen().bounds.width
-    let screenHeight = UIScreen.mainScreen().bounds.height
     let height = max(screenWidth, screenHeight)
-    
     let buttons = [TwoCircleButtonTypeCellView.createCell(), TwoCircleButtonTypeCellView.createCell()]
     
     for button in buttons { 
@@ -137,7 +154,26 @@ class MultiOptionViewController: UIViewController {
     }
   }
   
+  func addSmallButtons() {
+    let buttons = [MultiplyCircleButtonTypeCellView.createCell(), MultiplyCircleButtonTypeCellView.createCell(), MultiplyCircleButtonTypeCellView.createCell()]
+    
+    for button in buttons { 
+      button.title = "Share to Twitter"
+      twoCircleButtonTypeStackView.addArrangedSubview(button)
+    }
+  }
+  
   override func prefersStatusBarHidden() -> Bool {
     return true
+  }
+}
+
+extension MultiOptionViewController {
+  var screenWidth: CGFloat {
+    return UIScreen.mainScreen().bounds.width
+  }
+  
+  var screenHeight: CGFloat {
+    return UIScreen.mainScreen().bounds.height
   }
 }

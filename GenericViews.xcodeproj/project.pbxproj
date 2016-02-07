@@ -15,6 +15,7 @@
 		923034A11C6385E000716304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923034A01C6385E000716304 /* Assets.xcassets */; };
 		923034A41C63878600716304 /* MultiOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923034A31C63878600716304 /* MultiOptionViewController.swift */; };
 		923034A61C63879600716304 /* MultiOptionScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923034A51C63879600716304 /* MultiOptionScreens.storyboard */; };
+		9265069E1C67527E00853F82 /* UCTextFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265069D1C67527E00853F82 /* UCTextFrame.swift */; };
 		92BCF6A31C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */; };
 		92BCF6A51C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */; };
 		92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */; };
@@ -37,6 +38,7 @@
 		923034A01C6385E000716304 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		923034A31C63878600716304 /* MultiOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionViewController.swift; sourceTree = "<group>"; };
 		923034A51C63879600716304 /* MultiOptionScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiOptionScreens.storyboard; sourceTree = "<group>"; };
+		9265069D1C67527E00853F82 /* UCTextFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCTextFrame.swift; sourceTree = "<group>"; };
 		92BCF69D1C64D58600F7DD1E /* GenericViews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GenericViews-Bridging-Header.h"; sourceTree = "<group>"; };
 		92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCircleButtonTypeCellView.swift; sourceTree = "<group>"; };
 		92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoCircleButtonTypeCellView.xib; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				9230349E1C6385D300716304 /* MultiOptionsScreens.xcassets */,
 				923034951C6385BD00716304 /* LaunchScreen.storyboard */,
 				923034981C6385BD00716304 /* Info.plist */,
+				9265069D1C67527E00853F82 /* UCTextFrame.swift */,
 				92BCF6A61C64DA6400F7DD1E /* UIView+UCViewFromNib.h */,
 				92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */,
 				92BCF69D1C64D58600F7DD1E /* GenericViews-Bridging-Header.h */,
@@ -265,6 +268,7 @@
 				92FD97721C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift in Sources */,
 				92BCF6A31C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift in Sources */,
 				9230348F1C6385BD00716304 /* ViewController.swift in Sources */,
+				9265069E1C67527E00853F82 /* UCTextFrame.swift in Sources */,
 				9230348D1C6385BD00716304 /* AppDelegate.swift in Sources */,
 				92BCF6AA1C64E5E200F7DD1E /* MultiplyCircleButtonTypeCellView.swift in Sources */,
 				92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */,

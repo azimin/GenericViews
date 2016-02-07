@@ -285,6 +285,7 @@
                         <outlet property="titleLabel" destination="JU1-Ye-N6O" id="jVv-Vo-sgw"/>
                         <outlet property="twoCircleButtonTypeStackView" destination="xGm-k5-JPn" id="RXB-YS-pIC"/>
                         <outlet property="twoCircleButtonTypeStackViewBottomConstraint" destination="EUz-Iq-kr3" id="ugB-Y3-ZYh"/>
+                        <outlet property="twoCircleButtonTypeStackViewHightConstraint" destination="jHm-gy-aGI" id="Cdd-Bo-2mT"/>
                         <outlet property="viewHorizontalTopConstraint" destination="F9A-mO-emY" id="fvQ-ak-IJ3"/>
                     </connections>
                 </viewController>

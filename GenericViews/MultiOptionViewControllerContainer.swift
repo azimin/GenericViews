@@ -29,6 +29,6 @@ class MultiOptionViewControllerContainer: NSObject {
   }
   
   static func templateContainer() -> MultiOptionViewControllerContainer {
-    return MultiOptionViewControllerContainer(title: "TRY AGAIN - BUT TOMORROW", subtitle: "Hey, seems  you have truble with this exersise. Why don't you try again tomorrow and do something else in the meantime?", imageName: "push_notification_image", buttonsType: .TwoCirclesType)
+    return MultiOptionViewControllerContainer(title: "TRY AGAIN - BUT TOMORROW", subtitle: "Hey, seems  you have truble with this exersise. Why don't you try again tomorrow and do something else in the meantime?", imageName: "push_notification_image", buttonsType: .MultiplyCirclesType)
   }
 }
