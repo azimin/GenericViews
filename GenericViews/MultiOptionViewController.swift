@@ -96,15 +96,17 @@ class MultiOptionViewController: UIViewController {
     
     switch dataContainer.buttonsType {
     case .TwoCirclesType:
-      let twoCircleButtonTypeStackViewValue = round(pow(width, 4.32) * 0.09 / pow(320, 3.32))
-      differentAligmentCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+      let value = round(pow(width, 4.32) * 0.09 / pow(320, 3.32))
+      differentAligmentCircleButtonTypeStackViewBottomConstraint.constant = value
     case .MultiplyCirclesType:
-      let twoCircleButtonTypeStackViewValue = round(pow(width, 4) * 0.09 / pow(320, 3))
-      differentAligmentCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+      let value = round(pow(width, 4) * 0.09 / pow(320, 3))
+      differentAligmentCircleButtonTypeStackViewBottomConstraint.constant = value
     case .MultiplyCirclesVerticalType:
-      let twoCircleButtonTypeStackViewValue = round(pow(width, 3.6) * 0.09 / pow(320, 2.6))
-      verticalAligmentCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
-    default:
+      let value = round(pow(width, 3.6) * 0.09 / pow(320, 2.6))
+      verticalAligmentCircleButtonTypeStackViewBottomConstraint.constant = value
+    case .ButtonsType:
+      let value = round(pow(width, 4.28) * 0.07 / pow(320, 3.28))
+      verticalAligmentCircleButtonTypeStackViewBottomConstraint.constant = value
       break
     }
   }
@@ -151,6 +153,8 @@ class MultiOptionViewController: UIViewController {
       verticalAligmentCircleButtonTypeStackView.hidden = false
       addSmallVerticalButtons()
     case .ButtonsType:
+      verticalAligmentCircleButtonTypeStackView.hidden = false
+      addBasicButtons()
       break
     }
   }
@@ -179,6 +183,16 @@ class MultiOptionViewController: UIViewController {
     
     for button in buttons { 
       button.title = "Share to Twitter"
+      verticalAligmentCircleButtonTypeStackView.addArrangedSubview(button)
+    }
+  }
+  
+  func addBasicButtons() {
+    let buttons = [BasicButtonTypeCellView.createCell(), BasicButtonTypeCellView.createCell()]
+    
+    for (index, button) in buttons.enumerate() {
+      button.type = (index == 0) ? .Attention : .Basic
+      button.title = (index == 0) ? "Test test test test test test Test test test test test test" : "Test"
       verticalAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }
