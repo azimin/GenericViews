@@ -6,3 +6,4 @@
 
 #import "UIView+UCViewFromNib.h"
 #import "UIColor+UCColors.h"
+#import "UIFont+UCFonts.h"

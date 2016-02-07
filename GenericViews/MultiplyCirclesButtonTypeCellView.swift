@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MultiplyCirclesButtonTypeCellView: UIView {
+class MultiplyCirclesButtonTypeCellView: UIView, MultiOptionItemSettableCell {
   
   @IBOutlet weak private var titleLabelWidthConstraint: NSLayoutConstraint!
   @IBOutlet weak private var imageView: UIImageView!
@@ -27,6 +27,13 @@ class MultiplyCirclesButtonTypeCellView: UIView {
     }
     get {
       return titleLabel.text ?? ""
+    }
+  }
+  
+  var item: MultiOptionViewButtonCellDataContainer! {
+    didSet {
+      imageName = item.iconImageName!
+      title = item.title
     }
   }
   

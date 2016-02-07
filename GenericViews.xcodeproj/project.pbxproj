@@ -12,6 +12,8 @@
 		922B4D581C676D1D007F7DCA /* BasicButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B4D571C676D1D007F7DCA /* BasicButtonTypeCellView.swift */; };
 		922B4D5A1C676D23007F7DCA /* BasicButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922B4D591C676D23007F7DCA /* BasicButtonTypeCellView.xib */; };
 		922B4D5D1C6770FB007F7DCA /* UIColor+UCColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 922B4D5C1C6770FB007F7DCA /* UIColor+UCColors.m */; };
+		922B4D601C677D36007F7DCA /* UIFont+UCFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 922B4D5F1C677D36007F7DCA /* UIFont+UCFonts.m */; };
+		922B4D621C677F53007F7DCA /* MultiOptionViewButtonCellDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B4D611C677F53007F7DCA /* MultiOptionViewButtonCellDataContainer.swift */; };
 		9230348D1C6385BD00716304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230348C1C6385BD00716304 /* AppDelegate.swift */; };
 		9230348F1C6385BD00716304 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230348E1C6385BD00716304 /* ViewController.swift */; };
 		923034921C6385BD00716304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923034901C6385BD00716304 /* Main.storyboard */; };
@@ -39,6 +41,9 @@
 		922B4D591C676D23007F7DCA /* BasicButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicButtonTypeCellView.xib; sourceTree = "<group>"; };
 		922B4D5B1C6770FB007F7DCA /* UIColor+UCColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UCColors.h"; sourceTree = "<group>"; };
 		922B4D5C1C6770FB007F7DCA /* UIColor+UCColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UCColors.m"; sourceTree = "<group>"; };
+		922B4D5E1C677D36007F7DCA /* UIFont+UCFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+UCFonts.h"; sourceTree = "<group>"; };
+		922B4D5F1C677D36007F7DCA /* UIFont+UCFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+UCFonts.m"; sourceTree = "<group>"; };
+		922B4D611C677F53007F7DCA /* MultiOptionViewButtonCellDataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionViewButtonCellDataContainer.swift; sourceTree = "<group>"; };
 		923034891C6385BD00716304 /* GenericViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenericViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9230348C1C6385BD00716304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9230348E1C6385BD00716304 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +121,8 @@
 				92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */,
 				922B4D5B1C6770FB007F7DCA /* UIColor+UCColors.h */,
 				922B4D5C1C6770FB007F7DCA /* UIColor+UCColors.m */,
+				922B4D5E1C677D36007F7DCA /* UIFont+UCFonts.h */,
+				922B4D5F1C677D36007F7DCA /* UIFont+UCFonts.m */,
 				92BCF69D1C64D58600F7DD1E /* GenericViews-Bridging-Header.h */,
 			);
 			path = GenericViews;
@@ -135,6 +142,7 @@
 		92BCF6A11C64D5E000F7DD1E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				922B4D611C677F53007F7DCA /* MultiOptionViewButtonCellDataContainer.swift */,
 				92BCF6A21C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift */,
 				92BCF6A41C64D9A300F7DD1E /* TwoCirclesButtonTypeCellView.xib */,
 				92BCF6A91C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift */,
@@ -284,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923034A41C63878600716304 /* MultiOptionViewController.swift in Sources */,
+				922B4D601C677D36007F7DCA /* UIFont+UCFonts.m in Sources */,
 				92FD97721C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift in Sources */,
 				92BCF6A31C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift in Sources */,
 				9230348F1C6385BD00716304 /* ViewController.swift in Sources */,
@@ -292,6 +301,7 @@
 				922B4D5D1C6770FB007F7DCA /* UIColor+UCColors.m in Sources */,
 				922B4D541C67618D007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.swift in Sources */,
 				922B4D581C676D1D007F7DCA /* BasicButtonTypeCellView.swift in Sources */,
+				922B4D621C677F53007F7DCA /* MultiOptionViewButtonCellDataContainer.swift in Sources */,
 				92BCF6AA1C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift in Sources */,
 				92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */,
 			);

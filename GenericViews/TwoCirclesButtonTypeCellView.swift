@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TwoCirclesButtonTypeCellView: UIView {
+class TwoCirclesButtonTypeCellView: UIView, MultiOptionItemSettableCell {
   
-  @IBOutlet weak var titleLabelWidthConstraint: NSLayoutConstraint!
+  @IBOutlet weak private var titleLabelWidthConstraint: NSLayoutConstraint!
   
   var titleLabelWidthConstraintValue: CGFloat = 110 {
     didSet {
@@ -18,15 +18,24 @@ class TwoCirclesButtonTypeCellView: UIView {
     }
   }
   
-  @IBOutlet weak var imageView: UIImageView!
-  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak private var imageView: UIImageView!
+  @IBOutlet weak private var titleLabel: UILabel!
   
-  static func createCell() -> TwoCirclesButtonTypeCellView {
-    return TwoCirclesButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("TwoCirclesButtonTypeCellView")
+  var item: MultiOptionViewButtonCellDataContainer! {
+    didSet {
+      imageView.image = UIImage(named: item.iconImageName!)
+      titleLabel.text = item.title
+    }
   }
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    titleLabelWidthConstraint.constant = titleLabelWidthConstraintValue
+    
+    titleLabel.textColor = UIColor.uc_hexEEEEEEColor()
+    titleLabel.font = UIFont.uc_helveticaNeueLightWithSize(16)
+  }
+  
+  static func createCell() -> TwoCirclesButtonTypeCellView {
+    return TwoCirclesButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("TwoCirclesButtonTypeCellView")
   }
 }

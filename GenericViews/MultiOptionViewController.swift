@@ -69,6 +69,13 @@ class MultiOptionViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    titleLabel.font = UIFont.uc_helveticaNeueMediumFontWithSize(19)
+    titleLabel.textColor = UIColor.uc_hexEEEEEEColor()
+    
+    subtitleLabel.font = UIFont.uc_helveticaNeueLightWithSize(16)
+    subtitleLabel.textColor = UIColor.uc_hexEEEEEEColor().colorWithAlphaComponent(0.7)
+    
     // FIXME: - Remove after tests
     updateView()
     

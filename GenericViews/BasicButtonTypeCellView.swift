@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicButtonTypeCellView: UIView {
+class BasicButtonTypeCellView: UIView, MultiOptionItemSettableCell {
 
   enum Type {
     case Attention
@@ -42,9 +42,12 @@ class BasicButtonTypeCellView: UIView {
     
     button.layer.cornerRadius = button.frame.height / 2
     gradientLayer?.frame = CGRect(x: 0.0, y: 0.0, width: button.frame.size.width, height: button.frame.size.height)
-    
-    let height = UCTextFrameAttributes(string: title, width: buttonWidthConstraint.constant - 16, font: button.titleLabel?.font ?? UIFont.systemFontOfSize(16)).textHeight + 12
-    buttonHeightConstraint.constant = height
+  }
+  
+  var item: MultiOptionViewButtonCellDataContainer! {
+    didSet {
+      title = item.title
+    }
   }
   
   var type: Type = .Basic {
