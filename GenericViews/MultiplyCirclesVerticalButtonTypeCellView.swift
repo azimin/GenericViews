@@ -37,6 +37,8 @@ class MultiplyCirclesVerticalButtonTypeCellView: UIView, MultiOptionItemSettable
     }
   }
   
+  var index: Int = 0
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     

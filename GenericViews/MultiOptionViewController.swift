@@ -44,7 +44,7 @@ class MultiOptionViewController: UIViewController {
   @IBOutlet weak var verticalAligmentCircleButtonTypeStackViewBottomConstraint: NSLayoutConstraint!
   
   var isDataContaierAlreadySet: Bool = false
-  var dataContainer: MultiOptionViewControllerContainer! = MultiOptionViewControllerContainer.templateContainer() {
+  var dataContainer: MultiOptionViewControllerContainer! = MultiOptionViewControllerContainer.templateContainerForType(MultiOptionButtonsType.ButtonsType) {
     didSet {
       assert(!isViewLoaded(), "Must be set before view is loaded")
       assert(!isDataContaierAlreadySet, "Must be set just once")
@@ -169,38 +169,51 @@ class MultiOptionViewController: UIViewController {
   
   func addTwoSmallButtons() {
     let height = max(screenWidth, screenHeight)
-    let buttons = [TwoCirclesButtonTypeCellView.createCell(), TwoCirclesButtonTypeCellView.createCell()]
     
-    for button in buttons { 
+    assert(dataContainer.buttons.count == 2, "Wrong buttons number for current type")
+    
+    for i in 0..<2 {
+      let button = TwoCirclesButtonTypeCellView.createCell()
+      button.item = dataContainer.buttons[i]
+      button.index = i
+      
       button.titleLabelWidthConstraintValue = height * 0.25
       differentAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }
   
   func addSmallButtons() {
-    let buttons = [MultiplyCirclesButtonTypeCellView.createCell(), MultiplyCirclesButtonTypeCellView.createCell(), MultiplyCirclesButtonTypeCellView.createCell()]
+    assert(dataContainer.buttons.count == 3, "Wrong buttons number for current type")
     
-    for button in buttons { 
-      button.title = "Share to Twitter"
+    for i in 0..<3 {
+      let button = MultiplyCirclesButtonTypeCellView.createCell()
+      button.item = dataContainer.buttons[i]
+      button.index = i
+      
       differentAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }
   
   func addSmallVerticalButtons() {
-    let buttons = [MultiplyCirclesVerticalButtonTypeCellView.createCell(), MultiplyCirclesVerticalButtonTypeCellView.createCell(), MultiplyCirclesVerticalButtonTypeCellView.createCell()]
+    assert(dataContainer.buttons.count == 3, "Wrong buttons number for current type")
     
-    for button in buttons { 
-      button.title = "Share to Twitter"
+    for i in 0..<3 {
+      let button = MultiplyCirclesVerticalButtonTypeCellView.createCell()
+      button.item = dataContainer.buttons[i]
+      button.index = i
+      
       verticalAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }
   
   func addBasicButtons() {
-    let buttons = [BasicButtonTypeCellView.createCell(), BasicButtonTypeCellView.createCell()]
+    assert(dataContainer.buttons.count == 2, "Wrong buttons number for current type")
     
-    for (index, button) in buttons.enumerate() {
-      button.type = (index == 0) ? .Attention : .Basic
-      button.title = (index == 0) ? "Test test test test test test Test test test test test test" : "Test"
+    for i in 0..<2 {
+      let button = BasicButtonTypeCellView.createCell()
+      button.item = dataContainer.buttons[i]
+      button.index = i
+      
       verticalAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }

@@ -9,8 +9,8 @@
 import Foundation
 
 class MultiOptionViewButtonCellDataContainer: NSObject {
-  var title: String
-  var iconImageName: String?
+  private(set) var title: String
+  private(set) var iconImageName: String?
   var completionBlock: (() -> ())?
   
   init(title: String, iconImageName: String? = nil, completionBlock: (() -> ())? = nil) {
@@ -22,4 +22,5 @@ class MultiOptionViewButtonCellDataContainer: NSObject {
 
 protocol MultiOptionItemSettableCell {
   var item: MultiOptionViewButtonCellDataContainer! { set get }
+  var index: Int { set get }
 }

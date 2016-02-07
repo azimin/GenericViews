@@ -51,6 +51,12 @@ class BasicButtonTypeCellView: UIView, MultiOptionItemSettableCell {
     }
   }
   
+  var index: Int = 0 {
+    didSet {
+      self.type = (index == 0) ? .Attention : .Basic
+    }
+  }
+  
   var type: Type = .Basic {
     didSet {
       gradientLayer?.removeFromSuperlayer()
