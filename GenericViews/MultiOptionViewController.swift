@@ -36,8 +36,12 @@ class MultiOptionViewController: UIViewController {
   @IBOutlet weak var subtitleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
-  @IBOutlet weak var twoCircleButtonTypeStackView: OAStackView!
-  @IBOutlet var twoCircleButtonTypeStackViewHightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var differentAligmentCircleButtonTypeStackView: OAStackView!
+  @IBOutlet var differentAligmentCircleButtonTypeStackViewHightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var differentAligmentCircleButtonTypeStackViewBottomConstraint: NSLayoutConstraint!
+  
+  @IBOutlet weak var verticalAligmentCircleButtonTypeStackView: OAStackView!
+  @IBOutlet weak var verticalAligmentCircleButtonTypeStackViewBottomConstraint: NSLayoutConstraint!
   
   var isDataContaierAlreadySet: Bool = false
   var dataContainer: MultiOptionViewControllerContainer! = MultiOptionViewControllerContainer.templateContainer() {
@@ -56,8 +60,6 @@ class MultiOptionViewController: UIViewController {
   @IBOutlet weak var viewHorizontalTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var imageHorizontalTopConstraint: NSLayoutConstraint!
   
-  @IBOutlet weak var twoCircleButtonTypeStackViewBottomConstraint: NSLayoutConstraint!
-  
   // MARK: - Vertical
   
   @IBOutlet weak var imageVerticalTopConstraint: NSLayoutConstraint!
@@ -70,7 +72,7 @@ class MultiOptionViewController: UIViewController {
     // FIXME: - Remove after tests
     updateView()
     
-    twoCircleButtonTypeStackView.distribution = OAStackViewDistribution.FillProportionally
+    differentAligmentCircleButtonTypeStackView.distribution = OAStackViewDistribution.FillProportionally
   }
     
   override func updateViewConstraints() {
@@ -95,10 +97,13 @@ class MultiOptionViewController: UIViewController {
     switch dataContainer.buttonsType {
     case .TwoCirclesType:
       let twoCircleButtonTypeStackViewValue = round(pow(width, 4.32) * 0.09 / pow(320, 3.32))
-      twoCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+      differentAligmentCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
     case .MultiplyCirclesType:
+      let twoCircleButtonTypeStackViewValue = round(pow(width, 4) * 0.09 / pow(320, 3))
+      differentAligmentCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+    case .MultiplyCirclesVerticalType:
       let twoCircleButtonTypeStackViewValue = round(pow(width, 3.6) * 0.09 / pow(320, 2.6))
-      twoCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
+      verticalAligmentCircleButtonTypeStackViewBottomConstraint.constant = twoCircleButtonTypeStackViewValue
     default:
       break
     }
@@ -115,10 +120,10 @@ class MultiOptionViewController: UIViewController {
     
     switch dataContainer.buttonsType {
     case .MultiplyCirclesType:
-      twoCircleButtonTypeStackView.spacing = (view.viewFrameType == .Horizontal) ? height * 0.23 : height * 0.04
+      differentAligmentCircleButtonTypeStackView.spacing = (view.viewFrameType == .Horizontal) ? height * 0.23 : height * 0.04
       fallthrough
     case .TwoCirclesType:
-      twoCircleButtonTypeStackView.axis = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
+      differentAligmentCircleButtonTypeStackView.axis = (view.viewFrameType == .Horizontal) ? .Horizontal : .Vertical
     default:
       break
     }
@@ -133,33 +138,48 @@ class MultiOptionViewController: UIViewController {
     subtitleLabel.text = dataContainer.subtitle
     imageView.image = UIImage(named: dataContainer.imageName)
     
-    let type = dataContainer.buttonsType 
-    if type == .TwoCirclesType {
-      twoCircleButtonTypeStackView.hidden = false
+    switch dataContainer.buttonsType {
+    case .TwoCirclesType:
+      differentAligmentCircleButtonTypeStackView.hidden = false
+      differentAligmentCircleButtonTypeStackViewHightConstraint.constant = 50
       addTwoSmallButtons()
-    } else if type == .MultiplyCirclesType {
-      twoCircleButtonTypeStackView.hidden = false
-      twoCircleButtonTypeStackViewHightConstraint.constant = 60
+    case .MultiplyCirclesType:
+      differentAligmentCircleButtonTypeStackView.hidden = false
+      differentAligmentCircleButtonTypeStackViewHightConstraint.constant = 60
       addSmallButtons()
+    case .MultiplyCirclesVerticalType:
+      verticalAligmentCircleButtonTypeStackView.hidden = false
+      addSmallVerticalButtons()
+    case .ButtonsType:
+      break
     }
   }
   
   func addTwoSmallButtons() {
     let height = max(screenWidth, screenHeight)
-    let buttons = [TwoCircleButtonTypeCellView.createCell(), TwoCircleButtonTypeCellView.createCell()]
+    let buttons = [TwoCirclesButtonTypeCellView.createCell(), TwoCirclesButtonTypeCellView.createCell()]
     
     for button in buttons { 
       button.titleLabelWidthConstraintValue = height * 0.25
-      twoCircleButtonTypeStackView.addArrangedSubview(button)
+      differentAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }
   
   func addSmallButtons() {
-    let buttons = [MultiplyCircleButtonTypeCellView.createCell(), MultiplyCircleButtonTypeCellView.createCell(), MultiplyCircleButtonTypeCellView.createCell()]
+    let buttons = [MultiplyCirclesButtonTypeCellView.createCell(), MultiplyCirclesButtonTypeCellView.createCell(), MultiplyCirclesButtonTypeCellView.createCell()]
     
     for button in buttons { 
       button.title = "Share to Twitter"
-      twoCircleButtonTypeStackView.addArrangedSubview(button)
+      differentAligmentCircleButtonTypeStackView.addArrangedSubview(button)
+    }
+  }
+  
+  func addSmallVerticalButtons() {
+    let buttons = [MultiplyCirclesVerticalButtonTypeCellView.createCell(), MultiplyCirclesVerticalButtonTypeCellView.createCell(), MultiplyCirclesVerticalButtonTypeCellView.createCell()]
+    
+    for button in buttons { 
+      button.title = "Share to Twitter"
+      verticalAligmentCircleButtonTypeStackView.addArrangedSubview(button)
     }
   }
   

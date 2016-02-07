@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922B4D541C67618D007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B4D531C67618D007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.swift */; };
+		922B4D561C676198007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922B4D551C676198007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.xib */; };
 		9230348D1C6385BD00716304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230348C1C6385BD00716304 /* AppDelegate.swift */; };
 		9230348F1C6385BD00716304 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230348E1C6385BD00716304 /* ViewController.swift */; };
 		923034921C6385BD00716304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923034901C6385BD00716304 /* Main.storyboard */; };
@@ -16,11 +18,11 @@
 		923034A41C63878600716304 /* MultiOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923034A31C63878600716304 /* MultiOptionViewController.swift */; };
 		923034A61C63879600716304 /* MultiOptionScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923034A51C63879600716304 /* MultiOptionScreens.storyboard */; };
 		9265069E1C67527E00853F82 /* UCTextFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265069D1C67527E00853F82 /* UCTextFrame.swift */; };
-		92BCF6A31C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */; };
-		92BCF6A51C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */; };
+		92BCF6A31C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A21C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift */; };
+		92BCF6A51C64D9A300F7DD1E /* TwoCirclesButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF6A41C64D9A300F7DD1E /* TwoCirclesButtonTypeCellView.xib */; };
 		92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */; };
-		92BCF6AA1C64E5E200F7DD1E /* MultiplyCircleButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A91C64E5E200F7DD1E /* MultiplyCircleButtonTypeCellView.swift */; };
-		92BCF6AC1C64E5EB00F7DD1E /* MultiplyCircleButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF6AB1C64E5EB00F7DD1E /* MultiplyCircleButtonTypeCellView.xib */; };
+		92BCF6AA1C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BCF6A91C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift */; };
+		92BCF6AC1C64E5EB00F7DD1E /* MultiplyCirclesButtonTypeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF6AB1C64E5EB00F7DD1E /* MultiplyCirclesButtonTypeCellView.xib */; };
 		92FD97721C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD97711C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift */; };
 		FC53ADD10C7AAA2005907D4B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6469CAFA799EFEBB70C4D298 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		0470F0B0B379624A2E53A392 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6469CAFA799EFEBB70C4D298 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		922B4D531C67618D007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplyCirclesVerticalButtonTypeCellView.swift; sourceTree = "<group>"; };
+		922B4D551C676198007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplyCirclesVerticalButtonTypeCellView.xib; sourceTree = "<group>"; };
 		923034891C6385BD00716304 /* GenericViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenericViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9230348C1C6385BD00716304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9230348E1C6385BD00716304 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,12 +44,12 @@
 		923034A51C63879600716304 /* MultiOptionScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiOptionScreens.storyboard; sourceTree = "<group>"; };
 		9265069D1C67527E00853F82 /* UCTextFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCTextFrame.swift; sourceTree = "<group>"; };
 		92BCF69D1C64D58600F7DD1E /* GenericViews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GenericViews-Bridging-Header.h"; sourceTree = "<group>"; };
-		92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCircleButtonTypeCellView.swift; sourceTree = "<group>"; };
-		92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoCircleButtonTypeCellView.xib; sourceTree = "<group>"; };
+		92BCF6A21C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCirclesButtonTypeCellView.swift; sourceTree = "<group>"; };
+		92BCF6A41C64D9A300F7DD1E /* TwoCirclesButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoCirclesButtonTypeCellView.xib; sourceTree = "<group>"; };
 		92BCF6A61C64DA6400F7DD1E /* UIView+UCViewFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UCViewFromNib.h"; sourceTree = "<group>"; };
 		92BCF6A71C64DA6400F7DD1E /* UIView+UCViewFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UCViewFromNib.m"; sourceTree = "<group>"; };
-		92BCF6A91C64E5E200F7DD1E /* MultiplyCircleButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplyCircleButtonTypeCellView.swift; sourceTree = "<group>"; };
-		92BCF6AB1C64E5EB00F7DD1E /* MultiplyCircleButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplyCircleButtonTypeCellView.xib; sourceTree = "<group>"; };
+		92BCF6A91C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplyCirclesButtonTypeCellView.swift; sourceTree = "<group>"; };
+		92BCF6AB1C64E5EB00F7DD1E /* MultiplyCirclesButtonTypeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplyCirclesButtonTypeCellView.xib; sourceTree = "<group>"; };
 		92FD97711C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiOptionViewControllerContainer.swift; sourceTree = "<group>"; };
 		D0EF7C51CA4AF6462B721076 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,10 +126,12 @@
 		92BCF6A11C64D5E000F7DD1E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				92BCF6A21C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift */,
-				92BCF6A41C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib */,
-				92BCF6A91C64E5E200F7DD1E /* MultiplyCircleButtonTypeCellView.swift */,
-				92BCF6AB1C64E5EB00F7DD1E /* MultiplyCircleButtonTypeCellView.xib */,
+				92BCF6A21C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift */,
+				92BCF6A41C64D9A300F7DD1E /* TwoCirclesButtonTypeCellView.xib */,
+				92BCF6A91C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift */,
+				92BCF6AB1C64E5EB00F7DD1E /* MultiplyCirclesButtonTypeCellView.xib */,
+				922B4D531C67618D007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.swift */,
+				922B4D551C676198007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -204,8 +210,9 @@
 				9230349F1C6385D300716304 /* MultiOptionsScreens.xcassets in Resources */,
 				923034A11C6385E000716304 /* Assets.xcassets in Resources */,
 				923034921C6385BD00716304 /* Main.storyboard in Resources */,
-				92BCF6AC1C64E5EB00F7DD1E /* MultiplyCircleButtonTypeCellView.xib in Resources */,
-				92BCF6A51C64D9A300F7DD1E /* TwoCircleButtonTypeCellView.xib in Resources */,
+				92BCF6AC1C64E5EB00F7DD1E /* MultiplyCirclesButtonTypeCellView.xib in Resources */,
+				922B4D561C676198007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.xib in Resources */,
+				92BCF6A51C64D9A300F7DD1E /* TwoCirclesButtonTypeCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,11 +273,12 @@
 			files = (
 				923034A41C63878600716304 /* MultiOptionViewController.swift in Sources */,
 				92FD97721C64AFD0008F4D90 /* MultiOptionViewControllerContainer.swift in Sources */,
-				92BCF6A31C64D99800F7DD1E /* TwoCircleButtonTypeCellView.swift in Sources */,
+				92BCF6A31C64D99800F7DD1E /* TwoCirclesButtonTypeCellView.swift in Sources */,
 				9230348F1C6385BD00716304 /* ViewController.swift in Sources */,
 				9265069E1C67527E00853F82 /* UCTextFrame.swift in Sources */,
 				9230348D1C6385BD00716304 /* AppDelegate.swift in Sources */,
-				92BCF6AA1C64E5E200F7DD1E /* MultiplyCircleButtonTypeCellView.swift in Sources */,
+				922B4D541C67618D007F7DCA /* MultiplyCirclesVerticalButtonTypeCellView.swift in Sources */,
+				92BCF6AA1C64E5E200F7DD1E /* MultiplyCirclesButtonTypeCellView.swift in Sources */,
 				92BCF6A81C64DA6400F7DD1E /* UIView+UCViewFromNib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

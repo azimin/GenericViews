@@ -1,20 +1,15 @@
 //
-//  MultiplyCircleButtonTypeCellView.swift
+//  MultiplyCirclesVerticalButtonTypeCellView.swift
 //  GenericViews
 //
-//  Created by Alex Zimin on 05/02/16.
+//  Created by Alex Zimin on 07/02/16.
 //  Copyright © 2016 Alex Zimin. All rights reserved.
 //
 
 import UIKit
 
-enum ViewType {
-  case Horizontal
-  case Vertical
-}
+class MultiplyCirclesVerticalButtonTypeCellView: UIView {
 
-class MultiplyCircleButtonTypeCellView: UIView {
-  
   @IBOutlet weak private var titleLabelWidthConstraint: NSLayoutConstraint!
   @IBOutlet weak private var imageView: UIImageView!
   @IBOutlet weak private var titleLabel: UILabel!
@@ -28,14 +23,15 @@ class MultiplyCircleButtonTypeCellView: UIView {
   var title: String {
     set {
       titleLabel.text = newValue
-      titleLabelWidthConstraint.constant = min(UCTextFrameAttributes(string: newValue, font: titleLabel.font).textWidth, 219)
+      titleLabelWidthConstraint.constant = UCTextFrameAttributes(string: newValue, font: titleLabel.font).textWidth
     }
     get {
       return titleLabel.text ?? ""
     }
   }
   
-  static func createCell() -> MultiplyCircleButtonTypeCellView {
-    return MultiplyCircleButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("MultiplyCircleButtonTypeCellView")
+  static func createCell() -> MultiplyCirclesVerticalButtonTypeCellView {
+    return MultiplyCirclesVerticalButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("MultiplyCirclesVerticalButtonTypeCellView")
   }
+
 }

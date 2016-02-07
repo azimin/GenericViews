@@ -10,9 +10,9 @@ import UIKit
 
 enum MultiOptionButtonsType: Int {
   case TwoCirclesType
-  case PushNotificationRequestType
   case MultiplyCirclesType
-  case UserType
+  case MultiplyCirclesVerticalType
+  case ButtonsType
 }
 
 class MultiOptionViewControllerContainer: NSObject {
@@ -29,6 +29,6 @@ class MultiOptionViewControllerContainer: NSObject {
   }
   
   static func templateContainer() -> MultiOptionViewControllerContainer {
-    return MultiOptionViewControllerContainer(title: "TRY AGAIN - BUT TOMORROW", subtitle: "Hey, seems  you have truble with this exersise. Why don't you try again tomorrow and do something else in the meantime?", imageName: "push_notification_image", buttonsType: .MultiplyCirclesType)
+    return MultiOptionViewControllerContainer(title: "TRY AGAIN - BUT TOMORROW", subtitle: "", imageName: "push_notification_image", buttonsType: .MultiplyCirclesVerticalType)
   }
 }

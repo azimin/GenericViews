@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TwoCircleButtonTypeCellView: UIView {
+class TwoCirclesButtonTypeCellView: UIView {
   
   @IBOutlet weak var titleLabelWidthConstraint: NSLayoutConstraint!
   
@@ -21,8 +21,8 @@ class TwoCircleButtonTypeCellView: UIView {
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   
-  static func createCell() -> TwoCircleButtonTypeCellView {
-    return TwoCircleButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("TwoCircleButtonTypeCellView")
+  static func createCell() -> TwoCirclesButtonTypeCellView {
+    return TwoCirclesButtonTypeCellView().uc_loadFromNibWithNameIfEmbeddedInDifferentNib("TwoCirclesButtonTypeCellView")
   }
   
   override func awakeFromNib() {
